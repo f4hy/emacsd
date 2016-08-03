@@ -1,0 +1,11 @@
+/auto-save-list/*
+/ido.last
+tutorial/
+/ac-comphist.dat
+/abbrev_defs
+eshell/*
+url/*
+var/*
+history/*
+elpa/*
+/.python-environments/*
