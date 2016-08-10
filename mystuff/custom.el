@@ -87,6 +87,18 @@
 (add-hook 'python-mode-hook '(lambda () (define-key python-mode-map "\C-ch" 'flymake-start-syntax-check)))
 (add-hook 'python-mode-hook '(lambda () (add-hook 'before-save-hook 'delete-trailing-whitespace)))
 
+
+;; BASH stuff
+(eval-after-load 'flycheck
+  '(progn
+     (require 'flycheck-bashate)
+     (flycheck-bashate-setup)))
+
+
+(add-hook 'sh-mode-hook '(lambda () (add-hook 'before-save-hook 'delete-trailing-whitespace)))
+(add-hook 'sh-mode-hook '(lambda () (local-set-key "\C-c\C-c" 'flycheck-mode)))
+(add-hook 'sh-mode-hook '(lambda () (local-set-key "\C-c1" 'next-error)))
+
 (global-set-key "\M- " 'hippie-expand)
 
 (setq org-directory "~/org/")
