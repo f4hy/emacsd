@@ -1,4 +1,21 @@
-;; Time-stamp: <2016-08-03 15:44:04 (bfahy)>
+;; Time-stamp: <2016-09-20 11:43:18 (bfahy)>
+
+
+;; ;; Added by Package.el.  This must come before configurations of
+;; ;; installed packages.  Don't delete this line.  If you don't want it,
+;; ;; just comment it out by adding a semicolon to the start of the line.
+;; ;; You may delete these explanatory comments.
+;; (package-initialize)
+
+
+(require 'package) ;; You might already have this line
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(package-initialize) ;; You might already have this line
+
 
 (if (= emacs-major-version 23)
     (add-to-list 'load-path (expand-file-name "~/emacs23/package")))

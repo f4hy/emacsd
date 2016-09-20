@@ -17,9 +17,4 @@
   (setq autopair-dont-activate t)
 )
 
-;; interactive modes don't need whitespace checks
-(defun interactive-lisp-coding-hook ()
-  (setq autopair-dont-activate t)
-  (turn-off-whitespace))
-
 (provide 'coding-config)

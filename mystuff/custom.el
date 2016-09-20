@@ -1,22 +1,11 @@
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it uP, so be careful.
+ ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   [zenburn-bg zenburn-red zenburn-green zenburn-yellow zenburn-blue zenburn-magenta zenburn-cyan zenburn-fg])
- '(column-number-mode t)
- '(custom-safe-themes
+ '(package-selected-packages
    (quote
-    ("e6fca0aa3f94451ed1fc06b1f022ded9f4a20ad5bd64e14fc568cd73b7cd1e49" "d34d39005154228bd6c65f7293a8e29b6f50c71d5a5652fd65e4a22406f575cd" "fef3defd7269ee8c9559e15b08d11cf2aac5bc75" "5600dc0bb4a2b72a613175da54edb4ad770105aa" "0174d99a8f1fdc506fa54403317072982656f127" "86adc18aa6fb3ea0a801831f7b0bc88ed5999386" default)))
- '(ede-project-directories (quote ("/home/bfahy/fitcode")))
- '(fringe-mode (quote (0)) nil (fringe))
- '(inhibit-startup-screen t)
- '(org-agenda-files (quote ("~/org/tasks.org")))
- '(scroll-bar-mode nil)
- '(show-paren-mode t)
- '(sml/inactive-background-color "dim gray")
- '(uniquify-buffer-name-style (quote forward) nil (uniquify)))
+    (darkokai-theme yaml-mode tidy swiper ssh-config-mode smart-mode-line ruby-mode ruby-electric python-pylint python-pep8 pylint pyflakes pkgbuild-mode pep8 paredit package+ org nose markdown-mode magit jedi inf-ruby iedit idomenu guess-offset gnuplot-mode gist fuzzy flymake-cursor flymake-checkers flymake flycheck-bashate f elpy d-mode csv-mode cppcheck bpe auctex anybar))))
 (iswitchb-mode t)
 
 ;; (require 'ido)                      ; ido is part of emacs
@@ -165,6 +154,10 @@
 
 ;; (load-theme 'solarized-dark)
 (load-theme 'darkokai t)
+
+;; (use-package darkokai-theme
+;;   :ensure t
+;;   :config (load-theme 'darkokai t))
 
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/org/tasks.org" "Tasks")
