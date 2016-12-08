@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (darkokai-theme yaml-mode tidy swiper ssh-config-mode smart-mode-line ruby-mode ruby-electric python-pylint python-pep8 pylint pyflakes pkgbuild-mode pep8 paredit package+ org nose markdown-mode magit jedi inf-ruby iedit idomenu guess-offset gnuplot-mode gist fuzzy flymake-cursor flymake-checkers flymake flycheck-bashate f elpy d-mode csv-mode cppcheck bpe auctex anybar))))
+    (fsharp-mode multi-term darkokai-theme yaml-mode tidy swiper ssh-config-mode smart-mode-line ruby-mode ruby-electric python-pylint python-pep8 pylint pyflakes pkgbuild-mode pep8 paredit package+ org nose markdown-mode magit jedi inf-ruby iedit idomenu guess-offset gnuplot-mode gist fuzzy flymake-cursor flymake-checkers flymake flycheck-bashate f elpy d-mode csv-mode cppcheck bpe auctex anybar))))
 (iswitchb-mode t)
 
 ;; (require 'ido)                      ; ido is part of emacs
@@ -177,3 +177,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(defun unfill-paragraph ()
+  (interactive)
+  (let ((fill-column (point-max)))
+    (fill-paragraph nil)))
+
+(defun unfill-region ()
+  (interactive)
+  (let ((fill-column (point-max)))
+    (fill-region (region-beginning) (region-end) nil)))

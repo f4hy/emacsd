@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: poundbang
+# key: #!/
+# --
+#!/usr/bin/env python${1}
+$0
