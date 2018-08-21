@@ -21,6 +21,11 @@
         interprogram-paste-function       ; ...with...
         'x-cut-buffer-or-selection-value)) ; ...other X clients
 
+(setq x-select-enable-clipboard t)
+(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+(setq interprogram-paste-function 'x-selection-value)
+
+
 (setq search-highlight t                 ; highlight when searching...
       query-replace-highlight t)         ; ...and replacing
 (fset 'yes-or-no-p 'y-or-n-p)            ; enable y/n answers to yes/no
@@ -98,11 +103,11 @@
 ;; show-paren-mode: subtle blinking of matching paren (defaults are ugly)
 (show-paren-mode t)
 (setq show-paren-style 'parenthesis)
-(set-face-attribute 'show-paren-match-face nil
-                    :weight 'bold :underline nil :overline nil :slant 'normal)
-(set-face-background 'show-paren-mismatch-face "red")
-(set-face-attribute 'show-paren-mismatch-face nil
-                    :weight 'bold :underline nil :overline nil :slant 'normal)
+;; (set-face-attribute 'show-paren-match-face nil
+;;                    :weight 'bold :underline nil :overline nil :slant 'normal)
+;; (set-face-background 'show-paren-mismatch-face "red") ;
+;;(set-face-attribute 'show-paren-mismatch-face nil
+;;                    :weight 'bold :underline nil :overline nil :slant 'normal)
 
 ;; tramp, for sudo access
 (require 'tramp)

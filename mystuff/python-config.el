@@ -2,9 +2,12 @@
 ;; https://github.com/fgallina/python.el
 (require 'python)
 
-(setq python-shell-interpreter "python3.1")
+(elpy-enable)
 
 (provide 'python-config)
+
+
+;; (add-hook 'python-mode-hook 'my/python-mode-hook)
 
 (add-hook 'find-file-hooks 'maybe-load-template)
 (defun maybe-load-template ()

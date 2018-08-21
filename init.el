@@ -1,4 +1,4 @@
-;; Time-stamp: <2016-09-20 11:43:18 (bfahy)>
+;; Time-stamp: <2018-08-18 15:20:29 (f4hy)>
 
 
 ;; ;; Added by Package.el.  This must come before configurations of
@@ -82,7 +82,7 @@ Emacs load path."
 
 ;; a list of all configurations that must be loaded
 (defvar configs '(misc coding emacs-lisp common-lisp scheme c
-                       python ruby haskell 
+                       python ruby haskell cpp
                        ibuffer auctex nxml org bindings))
 (defun require-config (config)
   (message "Loading %s..." config)
@@ -111,7 +111,7 @@ Emacs load path."
 ;; load misc utils
 (require-config 'misc-utils)
 
-
+(server-start)
 ;; You can keep system- or user-specific customizations here
 (setq system-specific-config (concat dotfiles-dir system-name ".el")
       user-specific-config (concat dotfiles-dir user-login-name ".el")

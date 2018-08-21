@@ -3,9 +3,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(flymake-log-level 2)
  '(package-selected-packages
    (quote
-    (fsharp-mode multi-term darkokai-theme yaml-mode tidy swiper ssh-config-mode smart-mode-line ruby-mode ruby-electric python-pylint python-pep8 pylint pyflakes pkgbuild-mode pep8 paredit package+ org nose markdown-mode magit jedi inf-ruby iedit idomenu guess-offset gnuplot-mode gist fuzzy flymake-cursor flymake-checkers flymake flycheck-bashate f elpy d-mode csv-mode cppcheck bpe auctex anybar))))
+    (flycheck-irony company-irony magithub magit py-autopep8 pyenv-mode pyenv-mode-auto company-jedi json-reformat json-snatcher python-environment pyvenv pippel flycheck-pycheckers cargo toml-mode rust-mode terraform-mode dockerfile-mode matlab-mode flycheck-checkbashisms powershell flycheck-demjsonlint discover origami yafolding json-mode php-mode auto-org-md go-mode html5-schema fsharp-mode multi-term darkokai-theme yaml-mode tidy swiper ssh-config-mode smart-mode-line ruby-mode ruby-electric python-pylint python-pep8 pylint pyflakes pkgbuild-mode pep8 paredit package+ org nose markdown-mode inf-ruby iedit idomenu guess-offset gnuplot-mode gist fuzzy flymake-cursor flymake-checkers flymake flycheck-bashate f elpy d-mode csv-mode cppcheck bpe auctex anybar))))
 (iswitchb-mode t)
 
 ;; (require 'ido)                      ; ido is part of emacs
@@ -104,6 +105,11 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 
+(add-hook 'fsharp-mode-hook '(lambda () (local-set-key "\M-RET" 'fsharp-eval-region)))
+(unless (package-installed-p 'fsharp-mode)
+  (package-install 'fsharp-mode))
+(require 'fsharp-mode)
+
 ;; (defadvice package-compute-transaction
 ;;   (before
 ;;    package-compute-transaction-reverse (package-list requirements)
@@ -186,3 +192,7 @@
   (interactive)
   (let ((fill-column (point-max)))
     (fill-region (region-beginning) (region-end) nil)))
+
+;; (setq tramp-default-method "plink")
+
+(require 'tramp)
